@@ -1,0 +1,83 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    color: #333; /* Adjust the color as needed */
+}
+
+.row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.menu-item {
+    border: 1px solid black;
+    margin-bottom: 15px; /* This creates space below each section */
+    padding: 15px;
+    background-color: #cccccc; /* Grey background */
+    position: relative;
+    box-sizing: border-box;
+}
+
+.menu-item p {
+    margin-top: 50px; /* Adjust according to your design to push the text below the title */
+}
+
+.section-title {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px;
+    border: 1px solid black;
+    color: white; /* Default text color */
+    z-index: 10;
+}
+
+/* Color adjustments for titles */
+.chicken .section-title { background-color: plum; color: black; } /* Black text for chicken */
+.beef .section-title { background-color: darkred; }
+.sushi .section-title { background-color: darkgoldenrod; color: black; } /* Black text for sushi */
+
+/* Desktop View */
+@media (min-width: 992px) {
+    .menu-item {
+        width: calc(33.3333% - 30px); /* Subtract the total horizontal margin from the width */
+        float: left;
+        margin-left: 15px; /* Half of the total horizontal margin */
+        margin-right: 15px; /* Half of the total horizontal margin */
+    }
+    /* This targets the first element to remove the left margin */
+    .menu-item:first-child {
+        margin-left: 0;
+    }
+    /* This targets the last element to remove the right margin */
+    .menu-item:last-child {
+        margin-right: 0;
+    }
+}
+
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu-item {
+        width: calc(50% - 30px); /* Subtract the total horizontal margin from the width */
+        float: left;
+        margin-left: 15px; /* Half of the total horizontal margin */
+        margin-right: 15px; /* Half of the total horizontal margin */
+    }
+    /* Adjust for the third item on tablet to have no right margin */
+    .menu-item:nth-child(3) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Mobile View */
+/* No changes needed if mobile-first styles are set outside media queries */
